@@ -1,0 +1,208 @@
+#root {
+    min-height: 625px;
+    margin: 0 auto;
+    padding: 10px;
+    text-align: center;
+    background-color: rgb(40, 56, 104);
+}
+
+h1,
+h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+input {
+    border: none;
+    border-radius: 5px;
+    padding: 15px 25px;
+    width: 80%;
+}
+
+.section-todo {
+    display: grid;
+    grid-template-columns: 2fr 1.3fr;
+    grid-auto-rows: minmax(100px, auto);
+    margin: 20px 5px;
+    gap: 15px;
+    min-height: 440px;
+}
+
+.card-todo {
+    display: grid;
+    grid-template-columns: 2fr 1fr 0.5fr;
+    border-radius: 5px;
+    background-color: rgb(13, 70, 97);
+    box-shadow: -1px 2px 4px 1px rgba(0, 0, 0, 0.7);
+    text-align: start;
+    padding: 5px 10px;
+    margin-bottom: 15px;
+}
+
+.card-todo p {
+    margin: 5px;
+    text-align: center;
+}
+
+.p-no--todos {
+    font-size: large;
+    font-weight: bolder;
+    margin-top: 120px;
+}
+
+.p-form--error {
+    color: rgb(255, 0, 0);
+    font-weight: bold;
+    text-align: center;
+}
+
+.p-form--add {
+    color: rgb(27, 216, 58);
+    font-weight: bold;
+    text-align: center;
+}
+
+.p-complete {
+    text-decoration: line-through;
+}
+
+.input-checkbox {
+    align-self: center;
+    height: 20px;
+    cursor: pointer;
+}
+
+.btn-delete {
+    background-color: rgb(13, 70, 97);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 30px;
+}
+
+.btn-delete:hover {
+    opacity: 85%;
+}
+
+.article-form {
+    border-radius: 5px;
+    background-color: rgb(13, 70, 97);
+    box-shadow: -1px 2px 4px 1px rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    min-height: 350px;
+    max-height: 450px;
+    text-align: center;
+}
+
+.article-form p {
+    margin: 5px;
+    font-size: large;
+    font-weight: 600;
+    text-align: left;
+}
+
+.form-agregar {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 40px;
+}
+
+.btn {
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+    padding: 8px 16px;
+}
+
+.btn:hover {
+    opacity: 85%;
+}
+
+.btn-agregar {
+    background-color: rgb(24, 125, 192);
+    box-shadow: -1px 2px 4px 1px rgba(0, 0, 0, 0.7);
+    font-weight: bold;
+    font-size: 0.9rem;
+    width: 50%;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: rgb(13, 70, 97);
+    border-radius: 5px;
+    box-shadow: -1px 2px 4px 1px rgba(0, 0, 0, 0.7);
+    font-weight: bold;
+}
+
+.open-modal {
+    position: relative;
+    z-index: 1;
+    border: 1px solid aqua;
+    border-radius: 50%;
+    font-size: large;
+    padding: 15px;
+    background-color: rgb(27, 219, 219);
+    box-shadow: -1px 2px 4px 1px rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+}
+
+.modal {
+    background-color: rgba(32, 35, 41, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+@media (width <= 769px) {
+    .section-todo {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.2fr 1fr;
+    }
+
+    .article-form {
+        order: 1;
+    }
+
+    .section-card {
+        order: 2;
+    }
+
+    .article-form {
+        border-radius: 5px;
+        background-color: rgb(19, 112, 155);
+        box-shadow: -1px 2px 4px 1px rgba(0, 0, 0, 0.7);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        min-height: 100px;
+        max-height: 100px;
+    }
+
+    .article-form p {
+        margin: 2px;
+        font-size: medium;
+        font-weight: 600;
+        text-align: left;
+    }
+
+    .form-agregar {
+        border-radius: 5px;
+        background-color: rgb(13, 70, 97);
+        box-shadow: -1px 2px 4px 1px rgba(0, 0, 0, 0.7);
+        padding: 20px;
+        width: 85%;
+    }
+}
