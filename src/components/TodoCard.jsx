@@ -7,12 +7,13 @@ const TodoCard = ({ id, title, done }) => {
 
     return (
         <div className='card-todo'>
-            <div className={done ? 'p-complete' : undefined}>
-                <p>{ title } </p>
+            <div className='card-todo--left'>
+                <input type='checkbox' className='input-checkbox' checked={ done } onChange={ () => handleToggleCompleteTodo(id) } />
+                <p className={done ? 'p-complete' : undefined}>{ title } </p>
             </div>
             
             
-            <input type='checkbox' className='input-checkbox' checked={ done } onChange={ () => handleToggleCompleteTodo(id) } />
+    
             <button 
                 className='btn-delete' 
                 onClick={ () => handleDeleteTodo(id) } 

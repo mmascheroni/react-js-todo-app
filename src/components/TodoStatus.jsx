@@ -6,7 +6,7 @@ const TodoStatus = () => {
     const { total, completed, pending, todos } = useContext(TodoContext);
 
     return (
-        <>
+        <div className='container-status'>
             <p>🎯 Total: { total(todos) }</p>
             <p>✅ Completados: { completed(todos) } </p>
             {
@@ -14,7 +14,7 @@ const TodoStatus = () => {
                 ? <p>😎 Has completado tus todos</p>
                 : <p>❌ Pendientes: { pending(todos) }</p>
             }           
-        </>
+        </div>
     )
 }
 

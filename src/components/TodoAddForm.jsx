@@ -9,6 +9,7 @@ const TodoAddForm = () => {
         <form className='form-agregar' onSubmit={ onFormSubmit }>
             <h3>Agregar Todo</h3>
             <input
+                className='input-add--todo'
                 type='text'
                 placeholder='Titulo del Todo'
                 name='title'

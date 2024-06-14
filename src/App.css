@@ -4,6 +4,12 @@
     padding: 10px;
     text-align: center;
     background-color: rgb(40, 56, 104);
+
+    --form-control-color: rgb(5, 255, 5);
+}
+
+* {
+    box-sizing: border-box;
 }
 
 h1,
@@ -16,32 +22,52 @@ input {
     border: none;
     border-radius: 5px;
     padding: 15px 25px;
-    width: 80%;
+}
+
+.input-search {
+    width: 60%;
 }
 
 .section-todo {
     display: grid;
     grid-template-columns: 2fr 1.3fr;
     grid-auto-rows: minmax(100px, auto);
+    justify-content: center;
     margin: 20px 5px;
-    gap: 15px;
+    gap: 20px;
     min-height: 440px;
 }
 
+.section-card {
+    width: 75%;
+    justify-self: end;
+}
+
 .card-todo {
-    display: grid;
-    grid-template-columns: 2fr 1fr 0.5fr;
+    display: flex;
+    justify-content: space-between;
     border-radius: 5px;
     background-color: rgb(13, 70, 97);
     box-shadow: -1px 2px 4px 1px rgba(0, 0, 0, 0.7);
     text-align: start;
-    padding: 5px 10px;
+    padding: 10px;
     margin-bottom: 15px;
 }
 
 .card-todo p {
+    word-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
+    flex: 1;
     margin: 5px;
-    text-align: center;
+    font-weight: 600;
+    font-size: medium;
+}
+
+.card-todo--left {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    justify-items: center;
 }
 
 .p-no--todos {
@@ -67,9 +93,35 @@ input {
 }
 
 .input-checkbox {
-    align-self: center;
-    height: 20px;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: rgba(60, 97, 94, 0.986);
+    margin: 0;
+    padding: 10px;
+    font: inherit;
     cursor: pointer;
+    width: 30px;
+    height: 30px;
+    border: 0.15em solid rgb(50, 158, 253);
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+    align-self: center;
+}
+
+.input-checkbox::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    transform: scale(0);
+    transform-origin: bottom left;
+    transition: 130ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--form-control-color);
+}
+
+.input-checkbox:checked::before {
+    transform: scale(2.2);
 }
 
 .btn-delete {
@@ -84,6 +136,10 @@ input {
     opacity: 85%;
 }
 
+.container-status {
+    padding: 5px;
+}
+
 .article-form {
     border-radius: 5px;
     background-color: rgb(13, 70, 97);
@@ -92,6 +148,7 @@ input {
     min-height: 350px;
     max-height: 450px;
     text-align: center;
+    width: 75%;
 }
 
 .article-form p {
@@ -107,6 +164,10 @@ input {
     flex-direction: column;
     gap: 10px;
     margin-top: 40px;
+}
+
+.input-add--todo {
+    width: 90%;
 }
 
 .btn {
@@ -164,6 +225,20 @@ footer {
     bottom: 0;
 }
 
+@media (width <= 980px) {
+    .input-search {
+        width: 90%;
+    }
+
+    .article-form {
+        width: 95%;
+    }
+
+    .section-card {
+        width: 95%;
+    }
+}
+
 @media (width <= 769px) {
     .section-todo {
         display: grid;
@@ -179,6 +254,10 @@ footer {
         order: 2;
     }
 
+    .section-card {
+        justify-self: center;
+    }
+
     .article-form {
         border-radius: 5px;
         background-color: rgb(19, 112, 155);
@@ -186,6 +265,7 @@ footer {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        justify-self: center;
         padding: 10px;
         min-height: 100px;
         max-height: 100px;
@@ -204,5 +284,16 @@ footer {
         box-shadow: -1px 2px 4px 1px rgba(0, 0, 0, 0.7);
         padding: 20px;
         width: 85%;
+    }
+
+    .p-no--todos {
+        margin-top: 20px;
+    }
+}
+
+@media (width <= 391px) {
+    .article-form {
+        min-height: 120px;
+        max-height: 120px;
     }
 }

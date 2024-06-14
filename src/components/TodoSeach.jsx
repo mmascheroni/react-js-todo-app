@@ -7,6 +7,7 @@ const TodoSearch = () => {
 
     return (
         <input 
+            className='input-search'
             type="text" 
             placeholder='Busca tu/s Todos' 
             onChange={ (e) => onChangeSearchValue(e) } 

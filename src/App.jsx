@@ -24,9 +24,7 @@ function App() {
         <TodoList />
 
         <article className='article-form'>
-          <div>
             <TodoStatus />
-          </div>
           
           {
             !isMobile && <TodoAddForm />
